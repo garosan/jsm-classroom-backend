@@ -11,6 +11,13 @@ import {
 } from "drizzle-orm/pg-core";
 import { users } from "./auth";
 
+type Schedule = {
+  day: string;
+  startTime: string;
+  endTime: string;
+  location?: string;
+};
+
 const timestamps = {
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at")
